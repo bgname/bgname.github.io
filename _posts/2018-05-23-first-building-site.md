@@ -33,3 +33,9 @@ print id(wilber)
 print wilber
 print [id(ele) for ele in wilber]
 {% endhighlight %}
+
+代码的输出为：
+
+![copy_1](/assets/2018/05/23/copy_1.jpg)
+
+下面来分析一下这段代码：
