@@ -206,10 +206,10 @@ SNS-icon: #['Facebook', 'weibo', 'qq', 'github', 'Dribbble', 'Twitter', 'instagr
 ```yaml
 ---
 layout: default
-title: your awesome title
-page-title: awesome page-title.
-home-title: awesome home-title.
-description: description
+title: 冷耍不酷
+page-title: 冷耍不酷
+home-title: 冷耍不酷
+description: 用于记录平时学习的总结
 ---
 ```
 

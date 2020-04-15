@@ -1,8 +1,8 @@
 # Site settings 配置站点
-title: 'your awesome title'
-description: 'your web description'
-keywords: 'your web keywords, another keywords'
-url: 'https://abc.github.io' # your host
+title: '冷耍不酷'
+description: '用于记录平时学习的总结'
+keywords: 'bgname'
+url: 'https://bgname.github.io' # your host
 
 # nav 中文字符空格：&emsp;
 nav: # 最佳体验 六个标签 且最好每个标签不超过4中文字
@@ -14,13 +14,13 @@ nav: # 最佳体验 六个标签 且最好每个标签不超过4中文字
 
 # 博主
 author: true
-name: 'your awesome name'
-NickName: 'your awesome nickname'
-webtitle: 'your awesome webtitle'
-bio: 'your awesome bio'
+name: 'TWQ'
+NickName: '冷耍不酷'
+webtitle: '冷耍不酷'
+bio: '习得coldplay'
 about: true
-aboutyou: 'your introduction'
-portraits: '/assets/profile.jpeg' # your portraits image file path
+aboutyou: '坚持自我，活成coldplay'
+portraits: '/assets/head sculpture.jpg' # your portraits image file path
 
 # SNS
 SNS: true
@@ -41,7 +41,7 @@ SNS-icon: #['Facebook', 'weibo', 'qq', 'github', 'Dribbble', 'Twitter', 'instagr
   twitch: ''
 
 # 分页
-paginate: 2
+paginate: 3
 paginatepath: ['page:num']
 
 # since
