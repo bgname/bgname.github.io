@@ -1,0 +1,129 @@
+I"r,<h1 id="args表示的就是将形参中按照位置传值多出来的值都给了args且以元组的形式呈现">*args：（表示的就是将形参中按照位置传值，多出来的值都给了args,且以元组的形式呈现）</h1>
+
+<p>示例：</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+
+<span class="n">function</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span></code></pre></figure>
+
+<p>运行结果为：</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="mi">1</span>
+<span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span></code></pre></figure>
+
+<h1 id="关于可以从两个角度来观察">关于*，可以从两个角度来观察：</h1>
+<ol>
+  <li>从形参角度来看：</li>
+</ol>
+
+<p>示例：</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span> <span class="c1"># 其实这一操作相当于def foo(a,b,c,d,e):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+
+<span class="n">foo</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>  <span class="c1"># 其中的值分别传给了a,b,c,d,e</span></code></pre></figure>
+
+<p>运行结果为：</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span></code></pre></figure>
+
+<ol>
+  <li>从实参角度来看：</li>
+</ol>
+
+<p>示例：</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+
+<span class="n">foo</span><span class="p">(</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>   <span class="c1"># 其中的*(1,2,3)拆开来看就是：foo(1,2,3)</span></code></pre></figure>
+
+<p>运行结果为：</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="mi">1</span>
+<span class="mi">2</span>
+<span class="mi">3</span></code></pre></figure>
+
+<h1 id="kwargs表示的是形参中按照关键字把多余的传值以字典的形式呈现">**kwargs：（表示的是形参中按照关键字把多余的传值以字典的形式呈现）</h1>
+
+<p>示例：</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="n">function</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">b</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">c</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span> <span class="c1"># 将a=1,b=2,c=3以字典的形式传递给了**kwargs</span></code></pre></figure>
+
+<p>运行结果为：</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="mi">1</span>
+<span class="p">{</span><span class="s1">'a'</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s1">'b'</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="s1">'c'</span><span class="p">:</span><span class="mi">3</span><span class="p">}</span></code></pre></figure>
+
+<p>错误示例：</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="o">**</span><span class="n">kwargs</span><span class="p">,</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+
+<span class="n">foo</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">b</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">c</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span></code></pre></figure>
+
+<p>运行结果就会报错：</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">SyntaxError</span><span class="p">:</span> <span class="n">invalid</span> <span class="n">syntax</span></code></pre></figure>
+
+<p>其中的顺序必须是：x,*args,**kwargs</p>
+
+<h1 id="关于可以从两个角度来看">关于**,可以从两个角度来看：</h1>
+
+<ol>
+  <li>从形参的角度来看：</li>
+</ol>
+
+<p>示例：</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="n">foo</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">b</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">c</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span></code></pre></figure>
+
+<p>运行结果为：</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="p">{</span><span class="s1">'a'</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s1">'b'</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="s1">'c'</span><span class="p">:</span><span class="mi">3</span><span class="p">}</span></code></pre></figure>
+
+<ol>
+  <li>从实参的角度来看：</li>
+</ol>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+
+<span class="n">foo</span><span class="p">(</span><span class="o">**</span><span class="p">{</span><span class="s1">'a'</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s1">'b'</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="s1">'c'</span><span class="p">:</span><span class="mi">3</span><span class="p">})</span>  <span class="c1"># 将字典里的每个值按照关键字的方式传递给a,b,c</span></code></pre></figure>
+
+<p>执行结果为：</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="mi">1</span>
+<span class="mi">2</span>
+<span class="mi">3</span></code></pre></figure>
+
+<p>示例2：</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+
+<span class="n">foo</span><span class="p">(</span><span class="o">**</span><span class="p">{</span><span class="s1">'c'</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s1">'a'</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="s1">'b'</span><span class="p">:</span><span class="mi">3</span><span class="p">})</span>  <span class="c1"># 将字典里的每个值按照关键字的方式传递给a,b,c</span></code></pre></figure>
+
+<p>执行结果为：</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="mi">2</span>
+<span class="mi">3</span>
+<span class="mi">1</span></code></pre></figure>
+:ET

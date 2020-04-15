@@ -1,0 +1,46 @@
+I"�<p>当然，第一步是创建scrapy项目咯:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">scrapy</span> <span class="n">startproject</span> <span class="n">douban_mv_comments</span></code></pre></figure>
+
+<p>创建的项目文件如下：</p>
+
+<p><img src="/assets/2018/05/31/1.png" alt="1" /></p>
+
+<p>然后打开目录spiders文件下的spider_mv_comments.py （爬虫主要写在该文件下面）</p>
+
+<p><img src="/assets/2018/05/31/2.png" alt="2" /></p>
+
+<p>这个是我写完后的，大家不用在意代码  =。=//</p>
+
+<p>切回重点：这个时候我们应该打开谷歌，找到我们需要爬取的信息，这里我找的是头号玩家的评论信息。。</p>
+
+<p><img src="/assets/2018/05/31/3.png" alt="3" /></p>
+
+<p>在你想爬取的信息处右键检查元素查看信息</p>
+
+<p><img src="/assets/2018/05/31/4.png" alt="4" /></p>
+
+<p>然后打开p标签，发现我们要的信息在里面：</p>
+
+<p><img src="/assets/2018/05/31/5.png" alt="5" /></p>
+
+<p>如果自己不懂xpath的话，可以右键信息处copy—&gt;xpath</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="s1">'//*[@id="comments"]/div[1]/div[2]/p/text()'</span></code></pre></figure>
+
+<p>@id=”comments”,xpath它会匹配到这个comments属性。如上代码还会匹配到comments属性下的div标签[1],然后是div标签[1]属性下的div标签[2],然后是div标签[2]下的p标签。text()可以匹配到p标签下的文字段落。</p>
+
+<p>当然我们不止要第一条评论信息。然后按照以上步骤查询第二条评论信息：</p>
+
+<p>然后会得到如下的xpath匹配代码:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="s1">'//*[@id="comments"]/div[2]/div[2]/p/text()'</span></code></pre></figure>
+
+<p>发现没，代码中comments属性下的div标签为[2]了。那这样很容易就知道第三条评论信息怎么匹配了</p>
+
+<p>那肯定是：’//*[@id=”comments”]/div[3]/div[2]/p/text()’</p>
+
+<p>这个时候我们就需要翻页查询更多的评论，然后找到后页进行检查元素：</p>
+
+<p><img src="/assets/2018/05/31/6.png" alt="6" /></p>
+:ET

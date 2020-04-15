@@ -1,5 +1,8 @@
 ---
-title: "Id缓存器，JWT身份校验"
+layout: post
+title:  "Id缓存器，JWT身份校验"
+date:   2020-04-14 12:12:00 +0800
+categories: jekyll update
 ---
 
 
